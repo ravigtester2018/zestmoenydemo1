@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.Mouse;
+import org.openqa.selenium.interactions.internal.MouseAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -85,7 +87,15 @@ public class TripAdvisorPage extends BaseClass {
 		}
 		System.out.println("Switch to new Tab");
 		Actions action = new Actions(driver);
-		action.moveToElement(findElementByCSS(tRatingBubbleCSS)).build().perform();
+//		String rating = findElementByCSS(tRatingBubbleCSS).getAttribute("class");
+		String initial = "ui_bubble_rating fl bubble_";
+		System.out.println(initial);
+		for (int i = 10; i <= 50; i++) {
+			initial =initial+i;
+			i = i+10;
+			System.out.println(initial);
+			action.moveToElement(findElementByCSS(tRatingBubbleCSS+initial)).build().perform();
+		}
 		findElementByCSS(tReviewTitle).sendKeys(reviewTitle);
 		findElementByCSS(tReviewBox).sendKeys(reviewText);
 	}
