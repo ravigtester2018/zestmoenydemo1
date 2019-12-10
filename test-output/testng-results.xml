@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="54217" started-at="2019-12-10T07:09:14Z" finished-at="2019-12-10T07:10:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="54217" started-at="2019-12-10T07:09:14Z" finished-at="2019-12-10T07:10:09Z">
+      <class name="com.zest.tests.AmazonFlipkartTest">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="before" is-config="true" duration-ms="18" started-at="2019-12-10T07:09:14Z" finished-at="2019-12-10T07:09:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- before -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="beforeMethod" is-config="true" duration-ms="11294" started-at="2019-12-10T07:09:14Z" finished-at="2019-12-10T07:09:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="AmazonSearchTest()[pri:1, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="AmazonSearchTest" duration-ms="10377" started-at="2019-12-10T07:09:26Z" finished-at="2019-12-10T07:09:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AmazonSearchTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="afterMethod" is-config="true" duration-ms="8630" started-at="2019-12-10T07:09:36Z" finished-at="2019-12-10T07:09:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="beforeMethod" is-config="true" duration-ms="8201" started-at="2019-12-10T07:09:45Z" finished-at="2019-12-10T07:09:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeMethod -->
+        <test-method status="PASS" signature="FlipkartSearchTest()[pri:2, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="FlipkartSearchTest" duration-ms="10638" started-at="2019-12-10T07:09:53Z" finished-at="2019-12-10T07:10:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FlipkartSearchTest -->
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="afterMethod" is-config="true" duration-ms="5023" started-at="2019-12-10T07:10:03Z" finished-at="2019-12-10T07:10:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterMethod -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="afterTest" is-config="true" duration-ms="0" started-at="2019-12-10T07:10:09Z" finished-at="2019-12-10T07:10:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:com.zest.tests.AmazonFlipkartTest@598067a5]" name="afterClass" is-config="true" duration-ms="0" started-at="2019-12-10T07:10:09Z" finished-at="2019-12-10T07:10:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterClass -->
+      </class> <!-- com.zest.tests.AmazonFlipkartTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
