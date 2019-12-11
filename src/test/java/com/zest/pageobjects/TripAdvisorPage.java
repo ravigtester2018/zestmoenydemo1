@@ -1,13 +1,17 @@
 package com.zest.pageobjects;
 
+import java.awt.AWTException;
+import java.awt.Robot;
 import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.interactions.Mouse;
+import org.openqa.selenium.interactions.PointerInput;
 import org.openqa.selenium.interactions.internal.MouseAction;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +34,7 @@ public class TripAdvisorPage extends BaseClass {
 	String tWriteAReviewButtonCSS = "div[class='hotels-community-content-common-ContextualCTA__currentOption--3Wd5D'] a[href*='UserReview']";
 	 String tReviewTitle = "#ReviewTitle";
 	 String tReviewBox = "#ReviewText";
-	// String fsearchButtonXpath = "//button[@type='submit']";
+	 String tbannerCloseCSS = "sbx_banner .sbx_close";
 	// String fsearchBox = "input[title='Search for products, brands and
 	// more']";
 	// String fsearchBox1 = "input[name='q']";
@@ -75,8 +79,12 @@ public class TripAdvisorPage extends BaseClass {
 		}
 	}
 
-	public void WriteReview(WebDriver driver, String reviewTitle,String reviewText) {
+	public void WriteReview(WebDriver driver, String reviewTitle,String reviewText) throws AWTException {
 		String parent = driver.getWindowHandle();
+		if (isElementPresent(driver, findElementByCSS(tbannerCloseCSS))) {
+			findElementByCSS(tbannerCloseCSS).click();
+			System.out.println("Banner Closed.");
+		}
 		findElementByCSS(tWriteAReviewButtonCSS).click();
 		System.out.println("Review button clicked...");
 		Set<String> windowHandles = driver.getWindowHandles();
@@ -87,15 +95,16 @@ public class TripAdvisorPage extends BaseClass {
 		}
 		System.out.println("Switch to new Tab");
 		Actions action = new Actions(driver);
-//		String rating = findElementByCSS(tRatingBubbleCSS).getAttribute("class");
-		String initial = "ui_bubble_rating fl bubble_";
-		System.out.println(initial);
-		for (int i = 10; i <= 50; i++) {
-			initial =initial+i;
-			i = i+10;
-			System.out.println(initial);
-			action.moveToElement(findElementByCSS(tRatingBubbleCSS+initial)).build().perform();
-		}
+		
+		Point point = findElementByCSS(tRatingBubbleCSS).getLocation();
+		int x = point.getX();
+		int y = point.getY();
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS),x,y).build().perform();
+		
+		Robot robot = new Robot();
+		robot.mouseMove(x, y);
+		robot.mouseMove(x, y+10);
+		
 		findElementByCSS(tReviewTitle).sendKeys(reviewTitle);
 		findElementByCSS(tReviewBox).sendKeys(reviewText);
 	}

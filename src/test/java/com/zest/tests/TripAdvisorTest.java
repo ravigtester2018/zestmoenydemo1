@@ -1,5 +1,6 @@
 package com.zest.tests;
 
+import java.awt.AWTException;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
@@ -36,7 +37,7 @@ public class TripAdvisorTest extends BaseClass {
 	}
 
 	@Test
-	public void writeTripAdvisorReview() throws IOException {
+	public void writeTripAdvisorReview() throws IOException, AWTException {
 		TripAdvisorPage tAdvisorPage = new TripAdvisorPage();
 		getUrl(driver, read.returnPropertyValue("tripadvisor_url"));
 		// Search tripadvisor site

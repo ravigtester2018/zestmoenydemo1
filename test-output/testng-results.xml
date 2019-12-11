@@ -2,42 +2,42 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="575059" started-at="2019-12-10T14:08:38Z" finished-at="2019-12-10T14:18:13Z">
+  <suite name="Default suite" duration-ms="80160" started-at="2019-12-11T05:44:21Z" finished-at="2019-12-11T05:45:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="575059" started-at="2019-12-10T14:08:38Z" finished-at="2019-12-10T14:18:13Z">
+    <test name="Default test" duration-ms="80160" started-at="2019-12-11T05:44:21Z" finished-at="2019-12-11T05:45:41Z">
       <class name="com.zest.tests.TripAdvisorTest">
-        <test-method status="PASS" signature="before()[pri:0, instance:com.zest.tests.TripAdvisorTest@72057ecf]" name="before" is-config="true" duration-ms="25" started-at="2019-12-10T14:08:38Z" finished-at="2019-12-10T14:08:38Z">
+        <test-method status="PASS" signature="before()[pri:0, instance:com.zest.tests.TripAdvisorTest@1dde4cb2]" name="before" is-config="true" duration-ms="20" started-at="2019-12-11T05:44:21Z" finished-at="2019-12-11T05:44:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- before -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.zest.tests.TripAdvisorTest@72057ecf]" name="beforeMethod" is-config="true" duration-ms="5025" started-at="2019-12-10T14:08:38Z" finished-at="2019-12-10T14:08:43Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:com.zest.tests.TripAdvisorTest@1dde4cb2]" name="beforeMethod" is-config="true" duration-ms="4180" started-at="2019-12-11T05:44:21Z" finished-at="2019-12-11T05:44:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="FAIL" signature="writeTripAdvisorReview()[pri:0, instance:com.zest.tests.TripAdvisorTest@72057ecf]" name="writeTripAdvisorReview" duration-ms="568169" started-at="2019-12-10T14:08:43Z" finished-at="2019-12-10T14:18:11Z">
+        <test-method status="FAIL" signature="writeTripAdvisorReview()[pri:0, instance:com.zest.tests.TripAdvisorTest@1dde4cb2]" name="writeTripAdvisorReview" duration-ms="74191" started-at="2019-12-11T05:44:25Z" finished-at="2019-12-11T05:45:39Z">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#bubble_ratingui_bubble_rating fl bubble_10"}
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"sbx_banner .sbx_close"}
   (Session info: chrome=78.0.3904.108)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'VRAMU-IN2', ip: '192.168.0.148', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\VRAMU~1.ORA\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50442}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 45c24931c80ab2fd2d3a36209ba293b9
-*** Element info: {Using=css selector, value=#bubble_ratingui_bubble_rating fl bubble_10}]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\VRAMU~1.ORA\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53236}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7ff8d666c336ee0f82e2a4fd33f08902
+*** Element info: {Using=css selector, value=sbx_banner .sbx_close}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#bubble_ratingui_bubble_rating fl bubble_10"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"sbx_banner .sbx_close"}
   (Session info: chrome=78.0.3904.108)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'VRAMU-IN2', ip: '192.168.0.148', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\VRAMU~1.ORA\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:50442}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
-Session ID: 45c24931c80ab2fd2d3a36209ba293b9
-*** Element info: {Using=css selector, value=#bubble_ratingui_bubble_rating fl bubble_10}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 78.0.3904.108, chrome: {chromedriverVersion: 78.0.3904.105 (60e2d8774a81..., userDataDir: C:\Users\VRAMU~1.ORA\AppDat...}, goog:chromeOptions: {debuggerAddress: localhost:53236}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 7ff8d666c336ee0f82e2a4fd33f08902
+*** Element info: {Using=css selector, value=sbx_banner .sbx_close}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -52,9 +52,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElementByCssSelector(RemoteWebDriver.java:420)
 at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-at com.zest.pageobjects.TripAdvisorPage.findElementByCSS(TripAdvisorPage.java:42)
-at com.zest.pageobjects.TripAdvisorPage.WriteReview(TripAdvisorPage.java:97)
-at com.zest.tests.TripAdvisorTest.writeTripAdvisorReview(TripAdvisorTest.java:45)
+at com.zest.pageobjects.TripAdvisorPage.findElementByCSS(TripAdvisorPage.java:46)
+at com.zest.pageobjects.TripAdvisorPage.WriteReview(TripAdvisorPage.java:84)
+at com.zest.tests.TripAdvisorTest.writeTripAdvisorReview(TripAdvisorTest.java:46)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -86,11 +86,11 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- writeTripAdvisorReview -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.zest.tests.TripAdvisorTest@72057ecf]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-12-10T14:18:11Z" finished-at="2019-12-10T14:18:11Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:com.zest.tests.TripAdvisorTest@1dde4cb2]" name="afterMethod" is-config="true" duration-ms="0" started-at="2019-12-11T05:45:40Z" finished-at="2019-12-11T05:45:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.zest.tests.TripAdvisorTest@72057ecf]" name="afterTest" is-config="true" duration-ms="1790" started-at="2019-12-10T14:18:11Z" finished-at="2019-12-10T14:18:13Z">
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.zest.tests.TripAdvisorTest@1dde4cb2]" name="afterTest" is-config="true" duration-ms="1730" started-at="2019-12-11T05:45:40Z" finished-at="2019-12-11T05:45:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
