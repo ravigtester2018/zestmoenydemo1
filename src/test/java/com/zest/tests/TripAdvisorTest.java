@@ -42,18 +42,19 @@ public class TripAdvisorTest extends BaseClass {
 		getUrl(driver, read.returnPropertyValue("tripadvisor_url"));
 		// Search tripadvisor site
 		log.info("Trip Advisor Page Object Created");
-		tAdvisorPage.SearchAndGetFirstResult(driver,"Club Mahindra");
+		// Choose first result from search result
+		tAdvisorPage.SearchAndGetFirstResult(driver, "Club Mahindra");
+		// Write review and submit
 		tAdvisorPage.WriteReview(driver, "Test Review", "Some review added");
-//		aprice = aloginPage.AmazonSearchItemAndGetPrice(driver, "iphone xr 64gb - yellow", 0);
-//		log.info("Item searched in Amazon and got the price." + aprice);
+		System.out.println("Review Submitted successfully");
 	}
 
 	@AfterMethod
 	public void afterMethod() {
 	}
-	
+
 	@AfterTest
-	public void afterTest(){
+	public void afterTest() {
 		driver.quit();
 	}
 

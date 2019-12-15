@@ -10,7 +10,7 @@ public class ReadPropertyFile {
 	static Properties prop;
 
 	public ReadPropertyFile() throws IOException {
-		input = new FileInputStream("D:/WS6_ZestMoney/money/src/test/java/com/zest/utilities/config.properties");
+		input = new FileInputStream("/home/ravi/git/zestnew/zestmoenydemo1/src/test/java/com/zest/utilities/config.properties");
 		// load a properties file
 		prop = new Properties();
 		// get the property value and print it out

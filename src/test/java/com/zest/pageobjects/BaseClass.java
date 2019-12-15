@@ -23,12 +23,14 @@ public class BaseClass {
 	public WebDriver BaseClass(ReadPropertyFile read) throws IOException {
 		String val = read.returnPropertyValue("browser");
 		if (val.toLowerCase().equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", "D:/WS3/geckodriver.exe");
+			System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
 			driver = new FirefoxDriver();
+			driver.manage().window().maximize();
 		}
 		if (val.toLowerCase().equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", "D:/WS3/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "/home/ravi/Downloads/chromedriver_linux64_72/chromedriver");
 			driver = new ChromeDriver();
+			driver.manage().window().maximize();
 		}
 		return driver;
 	}
@@ -40,7 +42,7 @@ public class BaseClass {
 
 	protected Boolean isElementPresent(WebDriver driver, WebElement element) {
 		WebDriverWait wait = new WebDriverWait(driver, 5);
-		wait.until(ExpectedConditions.elementToBeClickable(element));
+		wait.until(ExpectedConditions.visibilityOf(element));
 		return element.isDisplayed();
 	}
 

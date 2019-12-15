@@ -27,20 +27,16 @@ public class TripAdvisorPage extends BaseClass {
 		wait.until(ExpectedConditions.visibilityOf(findElementByCSS(locator)));
 	}
 
-	String tsearchIconCSS = "span[class='brand-global-nav-action-search-Search__label--3PRUD']";
+	String tsearchIconCSS = "span[class='ui_icon search brand-global-nav-action-search-Search__icon--2DVjd']";
 	String tMainSearchBox = "#mainSearch";
 	String tFirstSearchResultCSS = "ul[class='resultContainer local']>li:nth-of-type(1) span[class='poi-name primaryText']";
-	 String tRatingBubbleCSS = "#bubble_rating";
+	String tRatingBubbleCSS = "#bubble_rating";
 	String tWriteAReviewButtonCSS = "div[class='hotels-community-content-common-ContextualCTA__currentOption--3Wd5D'] a[href*='UserReview']";
-	 String tReviewTitle = "#ReviewTitle";
-	 String tReviewBox = "#ReviewText";
-	 String tbannerCloseCSS = "sbx_banner .sbx_close";
-	// String fsearchBox = "input[title='Search for products, brands and
-	// more']";
-	// String fsearchBox1 = "input[name='q']";
-	// String fgetPriceCSS = "a[href*='apple-iphone-xr-yellow-64-gb']
-	// div[class='_1vC4OE _2rQ-NK']";
-	// String fclosePopupButtonCSS = "button[class='_2AkmmA _29YdH8']";
+	String tReviewTitle = "#ReviewTitle";
+	String tReviewBox = "#ReviewText";
+	String tbannerCloseCSS = "sbx_banner .sbx_close";
+	String tsubmitReviewCheckbox = "input[name='noFraud']";
+	String tsubmitReviewButton = "div[id='SUBMIT']";
 
 	WebElement findElementByCSS(String locator) {
 		return driver.findElement(By.cssSelector(locator));
@@ -79,34 +75,46 @@ public class TripAdvisorPage extends BaseClass {
 		}
 	}
 
-	public void WriteReview(WebDriver driver, String reviewTitle,String reviewText) throws AWTException {
+	public void WriteReview(WebDriver driver, String reviewTitle, String reviewText) throws AWTException {
 		String parent = driver.getWindowHandle();
-		if (isElementPresent(driver, findElementByCSS(tbannerCloseCSS))) {
-			findElementByCSS(tbannerCloseCSS).click();
-			System.out.println("Banner Closed.");
+		try {
+			if (isElementPresent(driver, findElementByCSS(tbannerCloseCSS))) {
+				findElementByCSS(tbannerCloseCSS).click();
+				System.out.println("Banner Closed.");
+			}
+		} catch (Exception e) {
+			System.out.println("Banner is not Displayed. No Issues.");
 		}
 		findElementByCSS(tWriteAReviewButtonCSS).click();
 		System.out.println("Review button clicked...");
 		Set<String> windowHandles = driver.getWindowHandles();
 		for (String handle : windowHandles) {
-			if(!handle.equals(parent)){
+			if (!handle.equals(parent)) {
 				driver.switchTo().window(handle);
 			}
 		}
 		System.out.println("Switch to new Tab");
 		Actions action = new Actions(driver);
-		
-		Point point = findElementByCSS(tRatingBubbleCSS).getLocation();
-		int x = point.getX();
-		int y = point.getY();
-		action.moveToElement(findElementByCSS(tRatingBubbleCSS),x,y).build().perform();
-		
-		Robot robot = new Robot();
-		robot.mouseMove(x, y);
-		robot.mouseMove(x, y+10);
-		
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS), 17, 0).perform();
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS), 49, 0).perform();
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS), 49 + 17 + 17, 0).perform();
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS), 49 + 17 + 17 + 17 + 17, 0).perform();
+		action.moveToElement(findElementByCSS(tRatingBubbleCSS), 49 + 17 + 17 + 17 + 17 + 17 + 17, 0).click().build()
+				.perform();
 		findElementByCSS(tReviewTitle).sendKeys(reviewTitle);
 		findElementByCSS(tReviewBox).sendKeys(reviewText);
+		try {
+			findElementByCSS(tsubmitReviewCheckbox).click();
+			if (findElementByCSS(tsubmitReviewCheckbox).isSelected()) {
+				System.out.println("Yes. Reviewcheckbix is selected.");
+			} else {
+				System.out.println("No. Reviewcheckbix is not selected. Selecting one more time.");
+				findElementByCSS(tsubmitReviewCheckbox).click();
+			}
+		} catch (Exception e) {
+			System.out.println("Exception in CheckBox selection.");
+		}
+		findElementByCSS(tsubmitReviewButton).click();
 	}
 
 }
